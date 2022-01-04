@@ -41,22 +41,28 @@ var changevault = function() {
 var generatePassword = function() {
   //change vault based on criteria
   changevault();
+  if (vault.length === 0) {
+    return "You have chosen no criteria!"
+  } else {
 
-  let i = 0;
-  let password ="";
-  while (i < criteria.passLength) {
-    i ++;
-  character = vault[randomchooser(vault)];
-  console.log (character);
-  password = password + character
-  };
+    //loop for length of password
+    let i = 0;
+    let password ="";
+    while (i < criteria.passLength) {
+      i ++;
+
+    //choose character from vault and add to the password  
+    character = vault[randomchooser(vault)];
+    console.log (character);
+    password = password + character
+    };
     
-  //reset vault and criteria for new password generation
-  criteria.reset();
-  vault = []
-  return password; 
+    //reset vault and criteria for new password generation and retun password
+    criteria.reset();
+    vault = []
+    return password;
+  } 
 }
-
 
 //create a random chooser function to pick a number in the length of the "vaults"
 var randomchooser = function (chooseFrom) {
@@ -100,7 +106,7 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-
+//display actions to password generator
 var displayPassword = function() {
   window.alert("Please follow the following prompts for password critera.");
   getCriteria();
