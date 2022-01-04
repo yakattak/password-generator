@@ -42,6 +42,7 @@ var generatePassword = function() {
   //change vault based on criteria
   changevault();
   if (vault.length === 0) {
+    criteria.reset();
     return "You have chosen no criteria!"
   } else {
 
