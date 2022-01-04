@@ -14,19 +14,46 @@ var criteria = {
   },
 }
 // create "vaults"" to get characters from
-var vault = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz", "0123456789","~!@#$%^&*()_+=-"];
+var vault = [];
+
+var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lower = "abcdefghijklmnopqrstuvwxyz";
+var numeric = "0123456789";
+var special = "~!@#$%^&*()_+=-";
+
+var changevault = function() {
+  if (criteria.lowercase) {
+    vault = vault + lower;
+  }
+  if (criteria.uppercase) {
+    vault = vault + upper;
+  }
+
+  if(criteria.numeric) {
+    vault = vault + numeric;
+  }
+  if(criteria.special) {
+    vault = vault + special
+  }
+}
 
 //generate the password
 var generatePassword = function() {
+  //change vault based on criteria
+  changevault();
+
   let i = 0;
   let password ="";
   while (i < criteria.passLength) {
     i ++;
-    
+  character = vault[randomchooser(vault)];
+  console.log (character);
+  password = password + character
   };
     
-  
+  //reset vault and criteria for new password generation
   criteria.reset();
+  vault = []
   return password; 
 }
 
