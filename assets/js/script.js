@@ -73,10 +73,10 @@ var randomchooser = function (chooseFrom) {
 
 //prompt user to get the criteria from them
 var getCriteria = function() {
-  criteria.lowercase = window.confirm("Click 'OK' to allow lowercase characters. 'Cancel' to reject.");
-  criteria.uppercase = window.confirm("Click 'OK' to allow uppercase characters. 'Cancel' to reject.");
-  criteria.numeric = window.confirm("Click 'OK' to allow numeric characters. 'Cancel' to reject.");
-  criteria.special = window.confirm("Click 'OK' to allow special characters (such as @). 'Cancel' to reject.");
+  criteria.lowercase = window.confirm("Click 'OK' if you want to include lowercase letters. Click 'Cancel' to reject.");
+  criteria.uppercase = window.confirm("Click 'OK' if you want to include uppercase letters. 'Cancel' to reject.");
+  criteria.numeric = window.confirm("Click 'OK' if you want to include numbers. 'Cancel' to reject.");
+  criteria.special = window.confirm("Click 'OK' if you want to include special characters (such as @). 'Cancel' to reject.");
 
   //repeat prompt for length until they cancel or choose an acceptable length
   while (criteria.passLength < 8 || criteria.passLength > 128 || isNaN(criteria.passLength)) {
