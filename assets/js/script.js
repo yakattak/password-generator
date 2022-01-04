@@ -1,5 +1,12 @@
 // Assignment code here
 
+var criteria = {
+  passLength:false,
+  lowercase:false,
+  uppercase:false,
+  numeric:false,
+  special:false,
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -18,5 +25,7 @@ generateBtn.addEventListener("click", writePassword);
 
 
 var generatePassword = function() {
-  return "1234";
+  window.alert("Please follow the following prompts for password critera");
+  console.log (criteria);
+
 }
