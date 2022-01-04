@@ -14,9 +14,22 @@ var criteria = {
   },
 }
 // create "vaults"" to get characters from
-var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var number = "1234567890"
-var special = "~!@#$%^&*()_+=-"
+var vault = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz", "0123456789","~!@#$%^&*()_+=-"];
+
+//generate the password
+var generatePassword = function() {
+  let i = 0;
+  let password ="";
+  while (i < criteria.passLength) {
+    i ++;
+    
+  };
+    
+  
+  criteria.reset();
+  return password; 
+}
+
 
 //create a random chooser function to pick a number in the length of the "vaults"
 var randomchooser = function (chooseFrom) {
@@ -43,11 +56,6 @@ var getCriteria = function() {
 }
 }
 
-//generate the password
-var generatePassword = function() {
-  return 1234;
-
-}
 
 
 // Get references to the #generate element
@@ -73,15 +81,15 @@ var displayPassword = function() {
   if (criteria.passLength === null) {
     return "You have canceled the generator"
   } else {
-    generatePassword();
-    criteria.reset();
-    return 1234;
+    return generatePassword();
+    }
+    
   }
   
   
   
   
-}
+
 
   
 
